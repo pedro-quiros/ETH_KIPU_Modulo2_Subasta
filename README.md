@@ -10,14 +10,14 @@ Este contrato implementa una subasta con las siguientes características:
 
 ## Variables principales
 
-| Variable          | Descripción                                   |
-|-------------------|-----------------------------------------------|
-| `owner`           | Dirección del creador/propietario de la subasta. |
-| `mejorOferente`   | Dirección del mejor oferente actual.           |
-| `mejorOfertaMonto`| Monto de la mejor oferta actual.               |
-| `finSubastaTiempo`| Timestamp que indica cuándo finaliza la subasta. |
-| `COMISION_PORCENTAJE` | Comisión fija del 2% aplicada al ganador.     |
-| `estaFinalizada`  | Booleano que indica si la subasta fue finalizada. |
+| Variable             | Descripción                                         |
+|----------------------|----------------------------------------------------|
+| `owner`              | Dirección del creador/propietario de la subasta.  |
+| `mejorOferente`      | Dirección del mejor oferente actual.                |
+| `mejorOfertaMonto`   | Monto de la mejor oferta actual.                    |
+| `finSubastaTiempo`   | Timestamp que indica cuándo finaliza la subasta.   |
+| `COMISION_PORCENTAJE`| Comisión fija del 2% aplicada al ganador.           |
+| `estaFinalizada`     | Booleano que indica si la subasta fue finalizada.  |
 
 ## Funciones principales
 
@@ -38,7 +38,22 @@ Este contrato implementa una subasta con las siguientes características:
 ## Uso
 
 Para usar el contrato:
-1. Desplegar.
-2. Invocar `ofertar` con el monto en `msg.value` adecuado.
-3. Finalizar la subasta con `finalizarSubasta` después del tiempo límite. (Solo puede hacerlo el Owner)
-4. Retirar excedentes y reembolsos según corresponda.
+
+1. Desplegar el contrato en la red deseada.
+2. Invocar `ofertar()` con un valor en `msg.value` que supere el mínimo establecido.
+3. El propietario debe llamar a `finalizarSubasta()` después del tiempo límite para cerrar la subasta y recibir la comisión.
+4. Los participantes que no ganaron pueden llamar a `reembolsar()` para recuperar sus fondos.
+5. Los participantes pueden usar `retirarExcedente()` para retirar ofertas anteriores que no son la mejor actual.
+
+---
+
+## Recursos útiles
+
+- [Conversor ETH a USD y otras criptomonedas](https://eth-converter.com/) — Para verificar valores y conversiones de Ether en tiempo real.
+- [Convertidor de Unix Timestamp](https://www.unixtimestamp.com/) — Para interpretar y convertir timestamps usados en el contrato (como `finSubastaTiempo`).
+
+---
+
+## Autor
+
+Pedro Quirós — pedrobquiros@gmail.com
