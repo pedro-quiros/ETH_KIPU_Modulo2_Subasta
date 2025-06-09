@@ -42,8 +42,3 @@ Para usar el contrato:
 2. Invocar `ofertar` con el monto en `msg.value` adecuado.
 3. Finalizar la subasta con `finalizarSubasta` después del tiempo límite. (Solo puede hacerlo el Owner)
 4. Retirar excedentes y reembolsos según corresponda.
-
----
-
-## Autor
-[Pedro Quiros] - [pedrobquiros@gmail.com]
