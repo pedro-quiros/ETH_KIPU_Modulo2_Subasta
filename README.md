@@ -1,4 +1,4 @@
-# ETH KIPU - Trabajo Práctico Módulo 2: Contrato Inteligente de Subasta en Solidity
+# ETH KIPU - Trabajo Práctico Módulo 2 | Subasta: Smart Contract
 
 ## Descripción
 Este contrato implementa una subasta con las siguientes características:
